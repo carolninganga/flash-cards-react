@@ -1,13 +1,11 @@
-import React from 'react';
 
-function Flashcard({ flashcard }) {
+import React, { useState } from 'react'
+function Flashcard( { flashcard } ) {
+    const [flip, setFlip] = useState(false)
     return (
-        <div>
-            {flashcard.question}
-        </div>
+        <div onClick={()=> setFlip(!flip)}>
+            {flip? flashcard.answer : flashcard.question}
+        </div> 
     )
 }
-
-
-
 export default Flashcard;
